@@ -32,7 +32,7 @@ def main_process():
     for file_path in folder.iterdir():
         if file_path.is_file():
             cmp_face = CompareImg(sample_img,str(file_path))
-            if cmp_face.cmp_img()[0]:
+            if cmp_face.cmp_img():
                 src_location = str(file_path).split('\\')[0]
                 des_location = "extract_img"
                 create_folder(des_location)
