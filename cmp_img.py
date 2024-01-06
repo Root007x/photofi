@@ -23,9 +23,16 @@ class CompareImg:
         
         # Error handling
         try:
-            unknown_img_encording = face_recognition.face_encodings(rgb_unknown_img)[0]
+            unknown_img_encordings = face_recognition.face_encodings(rgb_unknown_img)
         except IndexError as e:
             print("Face recognition failed")
             return False
+        
+        # multiple faces check
+        for unknown_img_encording in unknown_img_encordings:
+            matches = face_recognition.compare_faces([know_img_encording],unknown_img_encording)[0]
 
-        return face_recognition.compare_faces([know_img_encording],unknown_img_encording)[0]
+            if matches:
+                return True
+        
+        return False
